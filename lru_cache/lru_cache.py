@@ -39,4 +39,15 @@ class LRUCache:
     the newly-specified value.
     """
     def set(self, key, value):
-        pass
+        #! if key in cache
+        if key in self.storage:
+            node = self.storage[key]
+            node.value = (key, value)
+            self.dll.move_to_end(node)
+            return
+
+        #! if cache limit reached remove least recent used item
+        if self.length == self.limit:
+            del self.storage[self.dll.head.value[0]]
+            self.dll.remove_from_head()
+            self.length -= 1
