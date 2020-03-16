@@ -22,7 +22,7 @@ class LRUCache:
     """
     def get(self, key):
         if key in self.storage:
-            node = self.storage(key)
+            node = self.storage[key]
             self.dll.move_to_end(node)
             return node.value[1]
         else:
