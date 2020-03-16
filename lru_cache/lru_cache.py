@@ -51,3 +51,10 @@ class LRUCache:
             del self.storage[self.dll.head.value[0]]
             self.dll.remove_from_head()
             self.length -= 1
+
+        #! new item to cache
+        self.dll.add_to_tail((key, value))
+        self.storage[key] = self.dll.tail
+        self.length += 1
+
+
