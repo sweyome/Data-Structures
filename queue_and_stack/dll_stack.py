@@ -2,6 +2,7 @@ import sys
 sys.path.append('../doubly_linked_list.py')
 from doubly_linked_list import DoublyLinkedList
 
+
 class Stack:
     def __init__(self):
         self.size = 0
@@ -21,4 +22,4 @@ class Stack:
         return self.storage.remove_from_head()
 
     def len(self):
-        return self
+        return self.size
